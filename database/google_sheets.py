@@ -15,10 +15,18 @@ BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))
 )
 
-CREDENTIALS_FILE = os.path.join(
+RENDER_CREDENTIALS_FILE = "/etc/secrets/recoveries-ai-agent.json"
+
+LOCAL_CREDENTIALS_FILE = os.path.join(
     BASE_DIR,
     "credentials",
     "recoveries-ai-agent.json"
+)
+
+CREDENTIALS_FILE = (
+    RENDER_CREDENTIALS_FILE
+    if os.path.exists(RENDER_CREDENTIALS_FILE)
+    else LOCAL_CREDENTIALS_FILE
 )
 
 SPREADSHEET_ID = "1GQ_fbsSaWSZJpwgv0FDu6r2IjnzVV22lgMMkyKX1afs"
