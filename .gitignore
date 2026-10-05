@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+
+.env
+
+*.json
+credentials/
+
+*.key
+*.pem
+*.p12
+*.pfx
+.gradio/
